@@ -36,7 +36,7 @@ export default function RootLayout({
           shadow="0 0 10px #CB987A,0 0 5px #CB987A"
         />
       </head>
-      <body className={`${dmSans.className} antialiased`}>
+      <body className={`${dmSans.className} antialiased text-text-primary`}>
         <CartProvider>
           <Header />
           <CartSidebar />

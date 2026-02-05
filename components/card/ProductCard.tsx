@@ -27,7 +27,6 @@ export function ProductCard({ product }: { product: Product }) {
         setTimeout(() => setShowToast(false), 3000);
     };
 
-
     return (
         <>
             <div className="h-full border border-border-primary rounded-3xl p-4 hover:shadow-lg hover:border-primary-500 transition-shadow flex flex-col">
@@ -66,7 +65,7 @@ export function ProductCard({ product }: { product: Product }) {
                                 <span className="text-text-secondary">Quantity:</span>
                                 <button
                                     type="button"
-                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6"
+                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6 cursor-pointer"
                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                 >
                                     -
@@ -74,7 +73,7 @@ export function ProductCard({ product }: { product: Product }) {
                                 <span className="w-8 text-center">{quantity}</span>
                                 <button
                                     type="button"
-                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6"
+                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6 cursor-pointer"
                                     onClick={() => setQuantity(quantity + 1)}
                                 >
                                     +
@@ -87,13 +86,13 @@ export function ProductCard({ product }: { product: Product }) {
                         </div>
                         <div className="flex gap-2 justify-end">
                             <button
-                                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300"
+                                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
                                 onClick={handleCloseModal}
                             >
                                 Cancel
                             </button>
                             <button
-                                className="px-4 py-2 rounded-lg bg-background-brand-solid_alt text-white hover:bg-background-brand-solid_alt/80 transition-colors"
+                                className="px-4 py-2 rounded-lg bg-background-brand-solid_alt text-white hover:bg-background-brand-solid_alt/80 transition-colors cursor-pointer"
                                 onClick={handleConfirm}
                             >
                                 Confirm

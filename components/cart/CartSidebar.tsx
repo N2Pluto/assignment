@@ -66,7 +66,7 @@ export function CartSidebar() {
           <h2 className="text-xl font-semibold text-text-primary">Shopping Cart</h2>
           <button
             onClick={closeCart}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
             aria-label="Close cart"
           >
             <IoClose className="size-5" />
@@ -99,7 +99,7 @@ export function CartSidebar() {
                       <div className="flex items-center gap-2 border border-border-primary rounded">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                          className="p-1 hover:bg-gray-100 transition-colors"
+                          className="p-1 hover:bg-gray-100 transition-colors cursor-pointer"
                           aria-label="Decrease quantity"
                         >
                           <IoRemove className="size-4" />
@@ -107,7 +107,7 @@ export function CartSidebar() {
                         <span className="px-3 py-1 min-w-[3rem] text-center">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="p-1 hover:bg-gray-100 transition-colors"
+                          className="p-1 hover:bg-gray-100 transition-colors cursor-pointer"
                           aria-label="Increase quantity"
                         >
                           <IoAdd className="size-4" />
@@ -115,7 +115,7 @@ export function CartSidebar() {
                       </div>
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors"
+                        className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors cursor-pointer"
                         aria-label="Remove item"
                       >
                         <IoTrashOutline className="size-5" />
@@ -145,7 +145,7 @@ export function CartSidebar() {
             </div>
             <button
               onClick={handleExport}
-              className="w-full px-4 py-2 border border-border-primary rounded-lg hover:bg-gray-50 transition-colors text-text-primary"
+              className="w-full px-4 py-2 border border-border-primary rounded-lg hover:bg-gray-50 transition-colors text-text-primary cursor-pointer"
             >
               Export Cart
             </button>
@@ -174,13 +174,13 @@ export function CartSidebar() {
             <div className="flex gap-2 p-6 border-t border-border-primary">
               <button
                 onClick={handleDownloadJSON}
-                className="flex-1 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
+                className="flex-1 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors cursor-pointer"
               >
                 Download JSON
               </button>
               <button
                 onClick={handleDownloadTXT}
-                className="flex-1 px-4 py-2 border border-border-primary rounded-lg hover:bg-gray-50 transition-colors text-text-primary"
+                className="flex-1 px-4 py-2 border border-border-primary rounded-lg hover:bg-gray-50 transition-colors text-text-primary cursor-pointer"
               >
                 Download TXT
               </button>
