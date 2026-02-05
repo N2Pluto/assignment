@@ -1,7 +1,3 @@
-// Creates a debounced function that delays invoking func until after wait milliseconds
-// have elapsed since the last time the debounced function was invoked.
-// Returns a function that can be called to cancel pending invocations.
-
 export function debounce<T extends (...args: any[]) => void>(
     func: T,
     wait: number

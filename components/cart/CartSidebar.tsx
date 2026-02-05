@@ -155,7 +155,7 @@ export function CartSidebar() {
 
       {/* Export Modal */}
       {showExportModal && exportData && (
-        <div className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] flex flex-col">
             <div className="flex items-center justify-between p-6 border-b border-border-primary">
               <h3 className="text-xl font-semibold text-text-primary">Cart Export</h3>
@@ -174,7 +174,7 @@ export function CartSidebar() {
             <div className="flex gap-2 p-6 border-t border-border-primary">
               <button
                 onClick={handleDownloadJSON}
-                className="flex-1 px-4 py-2 bg-[#26B689] text-white rounded-lg hover:bg-[#219176] transition-colors"
+                className="flex-1 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
               >
                 Download JSON
               </button>

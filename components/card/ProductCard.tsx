@@ -30,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
 
     return (
         <>
-            <div className="h-full border border-border-primary rounded-3xl p-4 hover:shadow-lg hover:border-border-brand-solid transition-shadow flex flex-col">
+            <div className="h-full border border-border-primary rounded-3xl p-4 hover:shadow-lg hover:border-primary-500 transition-shadow flex flex-col">
                 <img
                     src={product.image}
                     alt={product.title}
@@ -52,18 +52,21 @@ export function ProductCard({ product }: { product: Product }) {
 
             {showModal && (
                 <div className="fixed inset-0 z-50 bg-black/50 bg-opacity-40 flex items-center justify-center p-4">
-                    <div className="bg-white rounded-lg p-4 sm:p-6 shadow-lg w-full max-w-md">
-                        <h2 className="text-xl font-semibold mb-4">Add to Cart</h2>
-                        <div className="mb-4 flex flex-col gap-2">
-                            <div>
+                    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg w-full max-w-md ">
+                        <div className="border-b border-border-primary">
+                            <p className="text-xl font-semibold mb-4 text-text-primary">Add to Cart</p>
+                        </div>
+
+                        <div className="mb-4 flex flex-col gap-2 mt-2">
+                            <div className="flex flex-col items-start">
                                 <span className="font-medium">{product.title}</span>
-                                <span className="ml-2 text-text-secondary">{product.price.toFixed(2)} $</span>
+                                <span className="text-text-secondary">{product.price.toFixed(2)} $</span>
                             </div>
                             <div className="flex items-center gap-2 mt-2">
-                                <span>Quantity:</span>
+                                <span className="text-text-secondary">Quantity:</span>
                                 <button
                                     type="button"
-                                    className="border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200"
+                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6"
                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                 >
                                     -
@@ -71,7 +74,7 @@ export function ProductCard({ product }: { product: Product }) {
                                 <span className="w-8 text-center">{quantity}</span>
                                 <button
                                     type="button"
-                                    className="border rounded-lg  px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 "
+                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6"
                                     onClick={() => setQuantity(quantity + 1)}
                                 >
                                     +
@@ -102,7 +105,7 @@ export function ProductCard({ product }: { product: Product }) {
 
             {/* Toast Notification */}
             {showToast && (
-                <div className="fixed bottom-4 right-4 bg-[#26B689] text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-in">
+                <div className="fixed bottom-4 right-4 bg-primary-500 text-white px-6 py-3 rounded-2xl shadow-lg z-50 animate-slide-in">
                     <p>Added to cart successfully!</p>
                 </div>
             )}

@@ -1,6 +1,3 @@
-// Flattens a nested cart object into a flat key-value structure using dot notation
-// Handles arrays, objects, and nested structures
-
 export function flattenCart(cart: Record<string, unknown>): Record<string, string | number> {
     const result: Record<string, string | number> = {};
 
@@ -37,8 +34,6 @@ export function flattenCart(cart: Record<string, unknown>): Record<string, strin
     flatten(cart);
     return result;
 }
-
-// Exports cart data in flattened format
 
 export function exportCartData(
     items: Array<{ id: number; name: string; price: number; quantity: number }>,
