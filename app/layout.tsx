@@ -40,7 +40,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <CartSidebar />
-          <div className="pt-24">
+          <div className="pt-24 bg-white">
             {children}
           </div>
         </CartProvider>
