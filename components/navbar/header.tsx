@@ -12,7 +12,7 @@ export function Header() {
             <Link
                 href={"/"}
             >
-                <div className="flex items-center gap-2 cursor-pointer">
+                <div className="flex items-center gap-2 cursor-pointer hover:scale-105">
                     <p className="text-text-primary text-2xl">Assignment</p>
                     <p className="text-text-secondary text-sm">by n2pluto</p>
                 </div>
@@ -20,7 +20,7 @@ export function Header() {
 
 
             <div
-                className="flex gap-2 justify-center items-center cursor-pointer hover:opacity-80 transition-opacity"
+                className="flex gap-2 justify-center items-center cursor-pointer hover:opacity-80 transition-opacity hover:scale-105"
                 onClick={openCart}
             >
                 <SlBasket className="stroke-3 size-5" />

@@ -30,11 +30,11 @@ export function ProductCard({ product }: { product: Product }) {
 
     return (
         <>
-            <div className="h-full border border-border-primary rounded-lg p-4 hover:shadow-lg transition-shadow flex flex-col">
+            <div className="h-full border border-border-primary rounded-3xl p-4 hover:shadow-lg hover:border-border-brand-solid transition-shadow flex flex-col">
                 <img
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-60 object-cover rounded mb-4"
+                    className="w-full h-60 object-cover rounded-xl mb-4"
                 />
                 <div className="flex flex-col gap-2 mb-4 flex-1">
                     <p className="text-text-primary text-lg font-bold line-clamp-2">{product.title}</p>
@@ -42,7 +42,7 @@ export function ProductCard({ product }: { product: Product }) {
                 </div>
 
                 <div
-                    className="flex items-center gap-2 border border-border-primary rounded-lg p-2 w-fit cursor-pointer hover:bg-gray-50 transition-colors mt-auto"
+                    className="flex items-center gap-2 border border-border-primary rounded-xl p-2 w-fit cursor-pointer hover:bg-gray-50 transition-colors mt-auto hover:scale-105"
                     onClick={handleAddToCartClick}
                 >
                     <FaShoppingBag className="size-4" />
@@ -63,7 +63,7 @@ export function ProductCard({ product }: { product: Product }) {
                                 <span>Quantity:</span>
                                 <button
                                     type="button"
-                                    className="border rounded px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200"
+                                    className="border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200"
                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                 >
                                     -
@@ -71,7 +71,7 @@ export function ProductCard({ product }: { product: Product }) {
                                 <span className="w-8 text-center">{quantity}</span>
                                 <button
                                     type="button"
-                                    className="border rounded px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200"
+                                    className="border rounded-lg  px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 "
                                     onClick={() => setQuantity(quantity + 1)}
                                 >
                                     +
@@ -84,13 +84,13 @@ export function ProductCard({ product }: { product: Product }) {
                         </div>
                         <div className="flex gap-2 justify-end">
                             <button
-                                className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+                                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300"
                                 onClick={handleCloseModal}
                             >
                                 Cancel
                             </button>
                             <button
-                                className="px-4 py-2 rounded bg-[#26B689] text-white hover:bg-[#219176] transition-colors"
+                                className="px-4 py-2 rounded-lg bg-background-brand-solid_alt text-white hover:bg-background-brand-solid_alt/80 transition-colors"
                                 onClick={handleConfirm}
                             >
                                 Confirm
