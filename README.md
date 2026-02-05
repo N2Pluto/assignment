@@ -1,269 +1,91 @@
 # E-commerce Product Listing & Cart
 
-A modern, responsive e-commerce product listing page with shopping cart functionality built with Next.js 15+, TypeScript, and Tailwind CSS.
+Modern e-commerce product listing with shopping cart built with **Next.js 15+**, **TypeScript**, and **Tailwind CSS**.
 
-## Features Implemented
+## 🚀 Quick Start
 
-### Core Requirements (Must Have - 100%)
-
-✅ **Product Listing**
-- Grid layout with responsive columns (1 on mobile, 2 on tablet, 3-4 on desktop)
-- Product cards display: image, name, price, and "Add to Cart" button
-- Skeleton loaders during data fetching (not just spinners)
-- Smooth hover effects on cards
-
-✅ **Shopping Cart (Sidebar)**
-- Slide-in sidebar with cart items
-- Quantity controls (+/-) for each item
-- Display item name, price per unit, and total per item
-- Remove item functionality
-- Empty state when cart is empty
-- Total price calculation
-- Item count badge in header
-
-✅ **Filter & Search**
-- Real-time search by product name (debounced for performance)
-- Category filter (dropdown with all available categories)
-- Price range filter:
-  - Under $1,000
-  - $1,000 - $5,000
-  - Over $5,000
-
-### Intermediate Features (Nice to Have - 100%)
-
-✅ **UI Polish**
-- Skeleton loaders for better loading experience
-- Smooth hover effects on product cards
-- Cart animation when opening sidebar
-- Toast notifications on successful add to cart
-- Sticky header with cart icon showing item count
-
-✅ **State Persistence**
-- Cart saved to localStorage (persists across page refreshes)
-- Active filters synced to URL params (shareable links)
-- Filters restored from URL on page load
-
-✅ **Cart Summary Export**
-- Export cart data in flattened format (dot notation)
-- Download as JSON or TXT file
-- Display in modal/dialog
-- Logs to browser console
-- Handles nested structures, arrays, and metadata
-
-### Advanced Features (Bonus - 100%)
-
-✅ **Debounced Search**
-- 300ms debounce delay for optimal performance
-- Prevents excessive API calls/filtering
-
-✅ **Responsive Design**
-- Fully responsive across all screen sizes
-- Mobile-first approach
-- Touch-friendly interactions
-
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm, yarn, pnpm, or bun
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd blt-soft-assignment
-```
-
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Set up environment variables:
-Create a `.env.local` file in the root directory:
-```env
-NEXT_PUBLIC_API_BASE_URL=https://fakestoreapi.com
-```
+# Set up environment variables
+echo "NEXT_PUBLIC_API_BASE_URL=https://fakestoreapi.com" > .env.local
 
-4. Run the development server:
-```bash
+# Run dev server
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000)
 
-### Build for Production
+## ✨ Features
 
-```bash
-npm run build
-npm start
-```
+### Core Features
+- ✅ **Product Grid**: Responsive layout (1/2/3-4 columns), skeleton loaders, hover effects
+- ✅ **Shopping Cart**: Sidebar with quantity controls, remove items, empty state, totals
+- ✅ **Search & Filters**: Debounced search, category filter, price ranges (Under $1k, $1k-$5k, Over $5k)
 
-## Technical Decisions & Trade-offs
+### Additional Features
+- ✅ **State Persistence**: Cart in localStorage, filters in URL params (shareable links)
+- ✅ **Cart Export**: Flatten nested data to dot notation, download JSON/TXT
+- ✅ **UI Polish**: Toast notifications, animations, responsive design
 
-### State Management
-- **Decision**: Used React Context API instead of external libraries (Redux, Zustand)
-- **Rationale**: 
-  - Simpler for this scope
-  - No additional dependencies
-  - Sufficient for cart state management
-  - Easier to understand and maintain
-
-### Cart Persistence
-- **Decision**: localStorage for cart persistence
-- **Rationale**:
-  - Simple and effective
-  - Works across page refreshes
-  - No backend required
-  - Syncs automatically on state changes
-
-### URL Parameter Syncing
-- **Decision**: Sync filters to URL params using Next.js router
-- **Rationale**:
-  - Enables shareable links with active filters
-  - Better UX (back/forward buttons work)
-  - No additional state management needed
-  - Uses Next.js built-in capabilities
-
-### Debounced Search
-- **Decision**: 300ms debounce delay
-- **Rationale**:
-  - Balances responsiveness and performance
-  - Reduces unnecessary filtering operations
-  - Improves UX on slower devices
-  - Custom implementation for full control
-
-### Cart Export Format
-- **Decision**: Flatten nested structure using dot notation
-- **Rationale**:
-  - Simulates real-world analytics/logging scenarios
-  - Handles complex nested data structures
-  - Reusable utility function
-  - Supports arrays, objects, and metadata
-
-### Responsive Grid
-- **Decision**: Tailwind CSS grid with breakpoints
-- **Rationale**:
-  - Mobile: 1 column (better readability)
-  - Tablet: 2 columns (balanced layout)
-  - Desktop: 3-4 columns (optimal space usage)
-  - Uses Tailwind's responsive utilities
-
-### Component Structure
-- **Decision**: Organized by feature/domain
-- **Rationale**:
-  - `components/card/` - Product-related components
-  - `components/cart/` - Cart-related components
-  - `components/filters/` - Filter components
-  - `contexts/` - Global state management
-  - `lib/utils/` - Utility functions
-  - Clear separation of concerns
-
-## File Structure
+## 📁 Project Structure
 
 ```
-blt-soft-assignment/
-├── app/
-│   ├── layout.tsx          # Root layout with providers
-│   ├── page.tsx            # Home page
-│   └── globals.css          # Global styles
+├── app/                    # Next.js app router
 ├── components/
-│   ├── card/
-│   │   ├── ProductCard.tsx
-│   │   └── ProductCardSkeleton.tsx
-│   ├── cart/
-│   │   └── CartSidebar.tsx
-│   ├── filters/
-│   │   └── ProductFilters.tsx
-│   ├── home/
-│   │   └── Hero.tsx
-│   └── navbar/
-│       └── header.tsx
-├── contexts/
-│   └── CartContext.tsx      # Cart state management
+│   ├── card/              # Product cards & skeletons
+│   ├── cart/              # Cart sidebar
+│   ├── filters/           # Search & filter components
+│   ├── home/              # Home page components
+│   └── navbar/            # Header
+├── contexts/              # Cart state (React Context)
 ├── lib/
-│   ├── services/
-│   │   ├── client.service.ts
-│   │   └── products.ts
-│   └── utils/
-│       ├── debounce.ts
-│       └── flattenCart.ts
-├── types/
-│   ├── cart.ts
-│   └── product.ts
-└── views/
-    └── HomeView.tsx
+│   ├── services/          # API services
+│   └── utils/             # Debounce, flattenCart utilities
+└── types/                 # TypeScript types
 ```
 
-## Time Spent
+## 🛠️ Tech Stack & Decisions
 
-- **Hours 1-2**: Core functionality (grid, cart, add/remove)
-- **Hours 3-4**: Filters, search, state management, URL syncing
-- **Hours 5-6**: Polish, animations, skeleton loaders, cart export, responsive design
+| Decision | Why |
+|----------|-----|
+| **React Context** | Simple state management, no extra dependencies |
+| **localStorage** | Persist cart across refreshes, no backend needed |
+| **URL Params** | Shareable filter links, better UX |
+| **Debounced Search** | 300ms delay for performance |
+| **Dot Notation Export** | Flatten nested data for analytics/logging |
 
-**Total**: ~6 hours
+## 📊 Cart Export Example
 
-## Key Features Breakdown
-
-### Cart Export Implementation
-
-The cart export feature transforms nested cart data into a flattened format:
-
-**Original Structure:**
+**Input:**
 ```json
 {
-  "items": [
-    { "id": 1, "name": "Product", "price": 100, "quantity": 2 }
-  ],
-  "filters": { "category": "electronics" },
-  "metadata": { "timestamp": "2026-01-15T10:00:00Z" }
+  "items": [{ "id": 1, "name": "Product", "price": 100, "quantity": 2 }],
+  "filters": { "category": "electronics" }
 }
 ```
 
-**Flattened Output:**
+**Output (Flattened):**
 ```json
 {
   "items.0.id": 1,
   "items.0.name": "Product",
   "items.0.price": 100,
   "items.0.quantity": 2,
-  "filters.category": "electronics",
-  "metadata.timestamp": "2026-01-15T10:00:00Z"
+  "filters.category": "electronics"
 }
 ```
 
-This demonstrates:
-- Handling nested objects
-- Array indexing in dot notation
-- Metadata inclusion
-- Reusable utility function
+## ⚡ Performance
 
-## Performance Considerations
+- Debounced search (300ms)
+- Memoized categories & callbacks
+- Skeleton loaders for better UX
+- Responsive images
 
-- **Debounced Search**: Prevents excessive filtering on every keystroke
-- **Memoized Categories**: Categories list is memoized to avoid recalculation
-- **useCallback**: Filter handler is memoized to prevent unnecessary re-renders
-- **Skeleton Loaders**: Better perceived performance than spinners
-- **Lazy Loading**: Images load as needed (browser default)
 
-## Browser Support
+## 🔧 Build
 
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Responsive design tested on various screen sizes
-
-## Future Enhancements (If Time Permitted)
-
-- Infinite scroll or pagination
-- Quick-view modal for products
-- Sort options (price, name)
-- Product image lazy loading with intersection observer
-- Cart item animations when adding/removing
-- Keyboard navigation support
-
-## License
-
-This project is part of a technical assignment.
-# assignment
+```bash
+npm run build && npm start```
