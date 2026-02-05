@@ -14,8 +14,7 @@ export function CartSidebar() {
     const flattened = exportCartData(items, {});
     setExportData(flattened);
     setShowExportModal(true);
-    
-    // Also log to console
+
     console.log("Exported Cart Data (Flattened):", flattened);
   };
 
