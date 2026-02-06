@@ -69,7 +69,7 @@ export function CartSidebar() {
             className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
             aria-label="Close cart"
           >
-            <IoClose className="size-5" />
+            <IoClose className="size-5 text-text-primary" />
           </button>
         </div>
 
@@ -90,7 +90,7 @@ export function CartSidebar() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded flex-shrink-0"
+                    className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded flex-shrink-0 text-text-primary"
                   />
                   <div className="flex-1 flex flex-col gap-2">
                     <h3 className="font-medium text-text-primary line-clamp-2">{item.name}</h3>
@@ -102,15 +102,15 @@ export function CartSidebar() {
                           className="p-1 hover:bg-gray-100 transition-colors cursor-pointer"
                           aria-label="Decrease quantity"
                         >
-                          <IoRemove className="size-4" />
+                          <IoRemove className="size-4 text-text-primary" />
                         </button>
-                        <span className="px-3 py-1 min-w-[3rem] text-center">{item.quantity}</span>
+                        <span className="px-3 py-1 min-w-[3rem] text-center text-text-primary text-sm">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           className="p-1 hover:bg-gray-100 transition-colors cursor-pointer"
                           aria-label="Increase quantity"
                         >
-                          <IoAdd className="size-4" />
+                          <IoAdd className="size-4 text-text-primary" />
                         </button>
                       </div>
                       <button
@@ -118,7 +118,7 @@ export function CartSidebar() {
                         className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors cursor-pointer"
                         aria-label="Remove item"
                       >
-                        <IoTrashOutline className="size-5" />
+                        <IoTrashOutline className="size-5 text-text-primary" />
                       </button>
                     </div>
                     <p className="text-sm font-medium text-text-primary mt-1">
@@ -163,11 +163,11 @@ export function CartSidebar() {
                 onClick={() => setShowExportModal(false)}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
               >
-                <IoClose className="size-5" />
+                <IoClose className="size-5 text-text-primary" />
               </button>
             </div>
             <div className="flex-1 overflow-y-auto p-6">
-              <pre className="bg-gray-50 p-4 rounded text-sm overflow-x-auto">
+              <pre className="bg-gray-50 p-4 rounded text-sm overflow-x-auto text-text-primary">
                 {JSON.stringify(exportData, null, 2)}
               </pre>
             </div>

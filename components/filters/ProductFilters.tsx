@@ -89,7 +89,7 @@ export function ProductFilters({ products, onFilteredProductsChange }: ProductFi
     }, [products, debouncedSearchQuery, selectedCategory, priceRange, onFilteredProductsChange]);
 
     return (
-        <div className="space-y-4 mb-6">
+        <div className="space-y-4 mb-6 text-text-primary">
             {/* Search */}
             <div className="relative">
                 <input
@@ -97,7 +97,7 @@ export function ProductFilters({ products, onFilteredProductsChange }: ProductFi
                     placeholder="Search products..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-2 border border-border-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#26B689] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-border-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-text-primary text-sm"
                 />
             </div>
 
@@ -105,17 +105,17 @@ export function ProductFilters({ products, onFilteredProductsChange }: ProductFi
             <div className="flex flex-col md:flex-row gap-4">
                 {/* Category Filter */}
                 <div className="flex-1">
-                    <label className="block text-sm font-medium text-text-primary mb-2">
+                    <label className="block text-sm font-medium mb-2 text-text-primary">
                         Category
                     </label>
                     <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="w-full px-6 py-2 border border-border-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white cursor-pointer"
+                        className="w-full px-6 py-2 border border-border-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white cursor-pointer text-sm"
                     >
                         <option value="all">All Categories</option>
                         {categories.map((category) => (
-                            <option key={category} value={category}>
+                            <option key={category} value={category} className="text-text-primary text-sm">
                                 {category.charAt(0).toUpperCase() + category.slice(1)}
                             </option>
                         ))}
@@ -130,7 +130,7 @@ export function ProductFilters({ products, onFilteredProductsChange }: ProductFi
                     <select
                         value={priceRange}
                         onChange={(e) => setPriceRange(e.target.value)}
-                        className="w-full px-4 py-2 border border-border-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white cursor-pointer"
+                        className="w-full px-4 py-2 border border-border-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white cursor-pointer text-sm"
                     >
                         <option value="all">All Prices</option>
                         <option value="under-1000">Under $1,000</option>

@@ -23,10 +23,10 @@ export function Header() {
                 className="flex gap-2 justify-center items-center cursor-pointer hover:opacity-80 transition-opacity hover:scale-105"
                 onClick={openCart}
             >
-                <SlBasket className="stroke-3 size-5" />
+                <SlBasket className="stroke-3 size-5 text-text-primary" />
                 {totalItems > 0 && (
                     <div className="flex items-center justify-center rounded-full border border-border-brand-solid bg-background-brand-primary px-2 py-0.5 min-w-7 min-h-7">
-                        <p className="text-sm font-medium">{totalItems.toLocaleString()}</p>
+                        <p className="text-sm font-medium text-text-primary">{totalItems.toLocaleString()}</p>
                     </div>
                 )}
             </div>

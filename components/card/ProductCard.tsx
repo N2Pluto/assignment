@@ -44,8 +44,8 @@ export function ProductCard({ product }: { product: Product }) {
                     className="flex items-center gap-2 border border-border-primary rounded-xl p-2 w-fit cursor-pointer hover:bg-gray-50 transition-colors mt-auto hover:scale-105"
                     onClick={handleAddToCartClick}
                 >
-                    <FaShoppingBag className="size-4" />
-                    <p>Add to cart</p>
+                    <FaShoppingBag className="size-4 text-text-primary" />
+                    <p className="text-text-primary text-sm">Add to cart</p>
                 </div>
             </div>
 
@@ -58,41 +58,41 @@ export function ProductCard({ product }: { product: Product }) {
 
                         <div className="mb-4 flex flex-col gap-2 mt-2">
                             <div className="flex flex-col items-start">
-                                <span className="font-medium">{product.title}</span>
+                                <span className="font-medium text-text-primary">{product.title}</span>
                                 <span className="text-text-secondary">{product.price.toFixed(2)} $</span>
                             </div>
                             <div className="flex items-center gap-2 mt-2">
-                                <span className="text-text-secondary">Quantity:</span>
+                                <span className="text-text-secondary text-sm">Quantity:</span>
                                 <button
                                     type="button"
-                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6 cursor-pointer"
+                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6 cursor-pointer text-text-primary"
                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                 >
                                     -
                                 </button>
-                                <span className="w-8 text-center">{quantity}</span>
+                                <span className="w-8 text-center text-text-primary text-sm">{quantity}</span>
                                 <button
                                     type="button"
-                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6 cursor-pointer"
+                                    className="flex items-center justify-center border rounded-lg px-2 py-1 text-lg bg-gray-100 hover:bg-gray-200 size-6 cursor-pointer text-text-primary"
                                     onClick={() => setQuantity(quantity + 1)}
                                 >
                                     +
                                 </button>
                             </div>
                             <p className="mt-2">
-                                <span className="font-medium">Total: </span>
-                                <span>{(product.price * quantity).toFixed(2)} $</span>
+                                <span className="font-medium text-text-primary text-sm">Total: </span>
+                                <span className="text-text-primary text-sm">{(product.price * quantity).toFixed(2)} $</span>
                             </p>
                         </div>
                         <div className="flex gap-2 justify-end">
                             <button
-                                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
+                                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer text-text-primary text-sm"
                                 onClick={handleCloseModal}
                             >
                                 Cancel
                             </button>
                             <button
-                                className="px-4 py-2 rounded-lg bg-background-brand-solid_alt text-white hover:bg-background-brand-solid_alt/80 transition-colors cursor-pointer"
+                                className="px-4 py-2 rounded-lg bg-background-brand-solid_alt text-white hover:bg-background-brand-solid_alt/80 transition-colors cursor-pointer text-text-primary text-sm"
                                 onClick={handleConfirm}
                             >
                                 Confirm
